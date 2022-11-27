@@ -1,3 +1,5 @@
+![](https://github.com/Laaguini/tgbot/blob/main/readme-cover.png?raw=true)
+
 # tgbot
 
 tgbot is a simple lightweight no-dependencies library for [Telegram Bot API](https://core.telegram.org/bots/api)
