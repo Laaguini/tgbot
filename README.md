@@ -31,7 +31,7 @@ func main() {
 ### Getting bot info
 
 ```go
-//returns info as JSON string
+// Info as JSON string
 fmt.Println(bot.Info())
 ```
 
