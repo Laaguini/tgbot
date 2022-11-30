@@ -1,3 +1,5 @@
+![](https://github.com/Laaguini/tgbot/blob/main/readme-cover.png?raw=true)
+
 # tgbot
 
 tgbot is a simple lightweight no-dependencies library for [Telegram Bot API](https://core.telegram.org/bots/api)
@@ -5,6 +7,7 @@ tgbot is a simple lightweight no-dependencies library for [Telegram Bot API](htt
 ## Overview
 
 - [Initialization](#initialization)
+- [Getting bot info](#getting-bot-info)
 - [Handling text messages](#handling-text-messages)
 - [Handling stickers](#handling-stickers)
 
@@ -23,6 +26,13 @@ func main() {
     
     bot.Poll()
 }
+```
+
+### Getting bot info
+
+```go
+// Info as JSON string
+fmt.Println(bot.Info())
 ```
 
 ### Handling text messages
