@@ -2,6 +2,7 @@ package tgbot
 
 import (
 	"fmt"
+	"mime"
 	"time"
 )
 
@@ -34,11 +35,29 @@ func (i *New) Poll() {
 
 			if offset != lastUpdate.Id {
 				for _, update := range updates[1:] {
-					if update.Message.Text != "" {
-						i.HandleMessage(*update.Message)
+					message := update.Message
+					if message.Text != "" {
+						i.HandleMessage(*message)
 					}
-					if update.Message.Sticker.Id != "" {
-						i.HandleSticker(*update.Message)
+					if message.Sticker.Id != "" {
+						i.HandleSticker(*message)
+					}
+					if message.Audio.Id != "" {
+						i.HandleAudio(*message)
+					}
+					if message.Video.Id != "" {
+						i.HandleVideo(*message)
+					}
+					if message.Document.Id != "" {
+						i.HandleDocument(*message)
+					}
+					if message.VideoNote.Id != "" {
+						i.HandleVideoNote(*message)
+					}
+					if message.Voice.Id != "" {
+						file_exts, _ := mime.ExtensionsByType(message.Voice.MimeType)
+						message.Voice.Extensions = file_exts
+						i.HandleVoice(*message)
 					}
 				}
 				offset = lastUpdate.Id

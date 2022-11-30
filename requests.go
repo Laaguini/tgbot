@@ -79,3 +79,29 @@ func (i *New) post(args *PostArgs) string {
 
 	return string(body)
 }
+
+func (i *New) getFilePath(fileId string) string {
+	res := i.get(GetArgs{Action: "getFile", Params: []Param{{Name: "file_id", Value: fileId}}})
+	var file struct {
+		Ok   bool
+		File File `json:"result"`
+	}
+	err := json.Unmarshal([]byte(res), &file)
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	return file.File.Path
+}
+
+func (i *New) GetFile(fileId string) io.ReadCloser {
+	q := fmt.Sprintf("https://api.telegram.org/file/bot%s/%s", i.Token, i.getFilePath(fileId))
+
+	res, err := http.Get(q)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	return res.Body
+}
