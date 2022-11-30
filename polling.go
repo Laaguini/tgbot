@@ -43,9 +43,13 @@ func (i *New) Poll() {
 						i.HandleSticker(*message)
 					}
 					if message.Audio.Id != "" {
+						file_exts, _ := mime.ExtensionsByType(message.Audio.MimeType)
+						message.Audio.Extensions = file_exts
 						i.HandleAudio(*message)
 					}
 					if message.Video.Id != "" {
+						file_exts, _ := mime.ExtensionsByType(message.Video.MimeType)
+						message.Video.Extensions = file_exts
 						i.HandleVideo(*message)
 					}
 					if message.Document.Id != "" {

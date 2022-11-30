@@ -14,15 +14,16 @@ type File struct {
 }
 
 type Audio struct {
-	Id        string `json:"file_id"`
-	UniqueId  string `json:"file_unique_id"`
-	Duration  int
-	Performer string
-	Title     string
-	Name      string `json:"file_name"`
-	MimeType  string `json:"mime_type"`
-	Size      int    `json:"file_size"`
-	Thumb     Photosize
+	Id         string `json:"file_id"`
+	UniqueId   string `json:"file_unique_id"`
+	Duration   int
+	Performer  string
+	Title      string
+	Name       string `json:"file_name"`
+	MimeType   string `json:"mime_type"`
+	Size       int    `json:"file_size"`
+	Thumb      Photosize
+	Extensions []string
 }
 
 type Document struct {
@@ -35,15 +36,16 @@ type Document struct {
 }
 
 type Video struct {
-	Id       string `json:"file_id"`
-	UniqueId string `json:"file_unique_id"`
-	Width    int
-	Height   int
-	Duration int
-	Name     string `json:"file_name"`
-	MimeType string `json:"mime_type"`
-	Size     int    `json:"file_size"`
-	Thumb    Photosize
+	Id         string `json:"file_id"`
+	UniqueId   string `json:"file_unique_id"`
+	Width      int
+	Height     int
+	Duration   int
+	Name       string `json:"file_name"`
+	MimeType   string `json:"mime_type"`
+	Size       int    `json:"file_size"`
+	Thumb      Photosize
+	Extensions []string
 }
 
 type VideoNote struct {
