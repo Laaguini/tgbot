@@ -10,10 +10,7 @@ tgbot is a simple lightweight no-dependencies library for [Telegram Bot API](htt
 - [Getting bot info](#getting-bot-info)
 - [Handling text messages](#handling-text-messages)
 - [Handling stickers](#handling-stickers)
-<<<<<<< HEAD
-=======
 - [Handling files](#handling-files)
->>>>>>> parent of 8fae427 (let's do it again)
 
 ## Usage
 
@@ -65,8 +62,6 @@ bot.OnSticker(func(message tgbot.Message) {
     bot.Send(message.Chat.Id, message.Sticker.Emoji)
 })
 ```
-<<<<<<< HEAD
-=======
 
 ### Handling files
 
@@ -95,4 +90,3 @@ bot.OnAudio(func(message tgbot.Message) {
     fmt.Println(audio.Name + " " + strconv.Itoa(audio.Duration) + " " + strconv.Itoa(audio.Size))
 })
 ```
->>>>>>> parent of 8fae427 (let's do it again)
